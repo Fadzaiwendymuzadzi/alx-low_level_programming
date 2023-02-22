@@ -1,6 +1,6 @@
 #include "alx.h"
 /**
- * main - Write a program that prints Holberton, followed by a new*
+ * main - Write a program that prints Alx, followed by a new*
  *
  *
  * Return: On success 0.
