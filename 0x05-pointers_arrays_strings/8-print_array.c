@@ -1,19 +1,27 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * main - check the code for
+ * print_array - prints n elements of an array of integers,
+ * followed by a new line.
+ * @a: the array to be printed.
+ * @n: the number of elements of the array to be printed.
  *
- * Return: Always 0.
+ * Return: nothing.
  */
-int main(void)
+void print_array(int *a, int n)
 {
-int array[5];
+	int i = 0, j = 0;
 
-array[0] = 98;
-array[1] = 402;
-array[2] = -198;
-array[3] = 298;
-array[4] = -1024;
-print_array(array, 5);
-return (0);
+	for (; a[j] != '\0'; j++)
+		;
+
+	for (; i < n; i++)
+	{
+		if (i == 0)
+			printf("%d", a[i]);
+		else
+			printf(", %d", a[i]);
+	}
+	printf("\n");
 }

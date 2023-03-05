@@ -1,53 +1,39 @@
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
+
 /**
- * main - Generates random valid passwords for the program 101-crackme.
+ * _atoi - convert a string to an integer.
+ * @s: the string to be converted.
  *
- * description: finds checksum value from objdump
- *
- * Return: 0
+ * Return: int.
  */
-
-
-int main(void)
+int _atoi(char *s)
 {
-	int counter, sum, random;
+	int len, i = 0, FLAG = 0, d = 0, n = 0, digit;
 
-	sum = 0;
-	counter = 0;
-	random = 0;
+	for (len = 0; s[len] != '\0'; len++)
+		;
 
-	char password[80];
-
-	srand(time(NULL));
-
-	while (sum < 2772)
+	while (i < len && FLAG == 0)
 	{
+		if (s[i] == '-')
+			++d;
 
-		if (2772 - sum < 48)
-	{
-		sum -= password[--counter];
+		if (s[i] >= 48 && s[i] <= 57)
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			FLAG = 1;
+			if (s[i + 1] < 48 || s[i + 1] > 57)
+				break;
+			FLAG = 0;
+		}
+		i++;
 	}
-		else if (2772 - sum <= 126)
-		{
-			random = 2772 - sum;
-		}
-		else
-		{
-			random = rand() % (126 - 48) + 48;
-		}
+	if (FLAG == 0)
+		return (0);
 
-		if (random)
-		{
-			password[counter++] = random;
-			sum += random;
-		}
-		random = 0;
-	}
-
-	password[counter] = '\0';
-	printf("%s\n", password);
-
-	return (0);
+	return (n);
+}
 }

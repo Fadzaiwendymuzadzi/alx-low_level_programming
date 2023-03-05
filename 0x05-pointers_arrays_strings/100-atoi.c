@@ -1,31 +1,38 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
+ * _atoi - convert a string to an integer.
+ * @s: the string to be converted.
  *
- * Return: Always 0.
+ * Return: int.
  */
-int main(void)
+int _atoi(char *s)
 {
-int nb;
+	int len, i = 0, FLAG = 0, d = 0, n = 0, digit;
 
-nb = _atoi("98");
-printf("%d\n", nb);
-nb = _atoi("-402");
-printf("%d\n", nb);
-nb = _atoi("          ------++++++-----+++++--98");
-printf("%d\n", nb);
-nb = _atoi("214748364");
-printf("%d\n", nb);
-nb = _atoi("0");
-printf("%d\n", nb);
-nb = _atoi("Suite 402");
-printf("%d\n", nb);
-nb = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA
-");
-printf("%d\n", nb);
-nb = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
-printf("%d\n", nb);
-return (0);
+	for (len = 0; s[len] != '\0'; len++)
+		;
+
+	while (i < len && FLAG == 0)
+	{
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= 48 && s[i] <= 57)
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			FLAG = 1;
+			if (s[i + 1] < 48 || s[i + 1] > 57)
+				break;
+			FLAG = 0;
+		}
+		i++;
+	}
+	if (FLAG == 0)
+		return (0);
+
+	return (n);
 }
