@@ -1,17 +1,17 @@
-#include "alx.h"
+#include "nain.h"
 
 /**
- * print_alphabet - prints 10 times the alphabet
+ * print_alphabet - a function that prints the alphabet, in lowercase
  *
- * Return: On success 1.
+ * Return: Always 0 (Succes)
  */
 void print_alphabet(void)
 {
-	int letter;
+	int n;
 
-	for (letter = 'a'; letter <= 'z'; letter++)
+	for (n = 'a'; n <= 'z'; n++)
 	{
-		_putchar(letter);
+		_putchar(n);
 	}
 	_putchar('\n');
 }
