@@ -1,22 +1,26 @@
-#include "main.c"
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - check the code
+ * _strcat - appends the src string to the dest string,
+ * overwriting the terminating null byte(\0) at the end
+ * of dest, and adds a terminating null byte.
+ * @dest: the destination.
+ * @src: the source to be concatenated to @dest.
  *
- * Return: Always 0.
+ * Return: dest.
  */
-int main(void)
+char *_strcat(char *dest, char *src)
 {
-char s1[98] = "Hello ";
-char s2[] = "World!\n";
-char *ptr;
+	int len = 0;
+	char *cpy;
 
-printf("%s\n", s1);
-printf("%s", s2);
-ptr = _strcat(s1, s2);
-printf("%s", s1);
-printf("%s", s2);
-printf("%s", ptr);
-return (0);
+	for (; dest[len] != '\0'; len++)
+		;
+
+	cpy = dest + len;
+	while (*src != '\0')
+		*cpy++ = *src++;
+	*cpy = '\0';
+
+	return (dest);
 }
