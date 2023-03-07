@@ -1,40 +1,37 @@
-#include "alx.h"
+#include "holberton.h"
 
 /**
- * times_table - Function that prints the 9 times table, starting with 0
+ * times_table - prints the 9 times table, starting with 0.
  *
- * Return void
+ * Return: void.
  */
-
 void times_table(void)
 {
+	int  m, n, p;
 
-	int row;
-	int col;
-	int prod;
-
-	for (row = 0; row <= 9; row++)
+	for (m = 0; m < 10; m++)
 	{
-		_putchar('0');
-
-		for (col = 1; col <= 9; col++)
+		for (n = 0; n < 10; n++)
 		{
-
-			prod = col * row;
-
-			_putchar(',');
-
-			_putchar(' ');
-
-			if (prod <= 9)
-			{
-				_putchar(' ');
-				_putchar(prod + '0');
-			}
+			p = m * n;
+			if (n == 0)
+				_putchar(p + '0');
 			else
 			{
-				_putchar(prod / 10 + '0');
-				_putchar(prod % 10 + '0');
+				if (p < 10)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar(32);
+					_putchar(p + '0');
+				}
+				else
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar((p / 10) + '0');
+					_putchar((p % 10) + '0');
+				}
 			}
 		}
 		_putchar('\n');

@@ -1,19 +1,15 @@
-#include "alx.h"
+#include "holberton.h"
 
 /**
- * _abs - Write a function that prints the sign of a number.
- * @n: argument to be check
+ * _abs - computes the absolute value of an integer.
+ *@n: the number whose absolute value is to be determine.
  *
- * Return: absolute value of n
-*/
+ * Return: the absolute value.
+ */
 int _abs(int n)
 {
-	if (n > 0)
-	{
-		return (n);
-	}
+	if (n < 0)
+		return (-n);
 	else
-	{
-		return (n * -1);
-	}
+		return (n);
 }

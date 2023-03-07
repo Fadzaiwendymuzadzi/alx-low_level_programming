@@ -1,24 +1,23 @@
-#include "alx.h"
-/**
- * jack_bauer - Write a function that prints the sign of a number.
- *
- * Return: void
- */
+#include "holberton.h"
 
+/**
+ * jack_bauer - prints every minute of the day of jack_bauer,
+ * starting from 00:00 to 23:59.
+ *
+ * Return: void.
+ */
 void jack_bauer(void)
 {
-	int hour, minute;
+	int h, m;
 
-	for (hour = 0; hour <= 23; hour++)
-	{
-		for (minute = 0; minute <= 59; minute++)
+	for (h = 0; h < 24; h++)
+		for (m = 0; m < 60; m++)
 		{
-			_putchar(hour / 10 + '0');
-			_putchar(hour % 10 + '0');
+			_putchar((h / 10) + '0');
+			_putchar((h % 10) + '0');
 			_putchar(':');
-			_putchar(minute / 10 + '0');
-			_putchar(minute % 10 + '0');
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
 			_putchar('\n');
 		}
-	}
 }

@@ -1,19 +1,15 @@
-#include "alx.h"
+#include "holberton.h"
 
 /**
- * _isalpha - Checks if input character is alphacharacter
- * @c: arg to be checked
+ * _isalpha - checks for alphabetic characters.
+ * @c: the character to be checked.
  *
- * Return: 1 for alpha, 0 for non-alpha
+ * Return: 1 if letter otherwise 0.
  */
 int _isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
+	if ((c >= 65 || c >= 97) && (c <= 91 || c <= 122))
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }

@@ -1,14 +1,12 @@
-#include "alx.h"
+#include "holberton.h"
 
 /**
- * add - Write a function that adds two integers and returns the result.
+ * add - add two integers and returns the result.
+ * @a: first operand.
+ * @b: second operand.
  *
- * @a: int val
- * @b: int val
- *
- * Return: Sum of a + b
+ * Return: Return the a + b.
  */
-
 int add(int a, int b)
 {
 	return (a + b);
